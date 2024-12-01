@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+package Day01;
+
 import java.util.List;
 import java.util.Scanner;
 

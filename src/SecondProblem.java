@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class SecondProblem {
     public static void main(String[] args) {
 
-
         List<Integer> leftList = new ArrayList<Integer>();
         List<Integer> rightList = new ArrayList<Integer>();
 

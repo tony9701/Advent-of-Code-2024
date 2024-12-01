@@ -1,2 +1,3 @@
-# Advent-of-Code-2024
- Advent of Code is an annual event featuring Christmas-themed programming challenges presented in the format of an Advent calendar
+# ⚡[Advent of Code 2024](https://adventofcode.com/)⚡
+
+#### My Java solutions for the event showcase my technical skills and problem-solving abilities.

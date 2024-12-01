@@ -47,24 +47,9 @@ public class FirstProblem {
 
 
         //TODO ANSWER:
-        Scanner sc = new Scanner(System.in);
         List<Integer> leftList = new ArrayList<Integer>();
         List<Integer> rightList = new ArrayList<Integer>();
-
-        System.out.println("Paste your input and hit 'Enter' 2 times!");
-
-        while (sc.hasNextLine()) {
-            String input = sc.nextLine();
-
-            if (input.trim().isEmpty()) {
-                break;
-            }
-
-            String[] inputArr = input.split("\\s+");
-
-            leftList.add(Integer.parseInt(inputArr[0]));
-            rightList.add(Integer.parseInt(inputArr[1]));
-        }
+        ListCreator.createLists(leftList, rightList);
 
         Collections.sort(leftList);
         Collections.sort(rightList);

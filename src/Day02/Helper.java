@@ -3,9 +3,10 @@ package Day02;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Helper {
-    public static boolean isSafe(int[] numbers) {
+    public static boolean isSafe(List<Integer> numbers) {
 
 
         if (isDecreasing(numbers)) {
@@ -16,10 +17,10 @@ public class Helper {
 
     }
 
-    public static boolean isIncreasing(int[] numbers) {
-        for (int i = 0; i < numbers.length - 1; i++) {
-            int currentNum = numbers[i];
-            int nextNum = numbers[i + 1];
+    public static boolean isIncreasing(List<Integer> numbers) {
+        for (int i = 0; i < numbers.size() - 1; i++) {
+            int currentNum = numbers.get(i);
+            int nextNum = numbers.get(i + 1);
 
             //check if the difference between numbers are more than 3 or if the nums are equal
             if (diffCheckerNotValid(currentNum, nextNum)) {
@@ -36,10 +37,11 @@ public class Helper {
         return true;
     }
 
-    public static boolean isDecreasing(int[] numbers) {
-        for (int i = 0; i < numbers.length - 1; i++) {
-            int currentNum = numbers[i];
-            int nextNum = numbers[i + 1];
+    // 8 6 4 4 1
+    public static boolean isDecreasing(List<Integer> numbers) {
+        for (int i = 0; i < numbers.size() - 1; i++) {
+            int currentNum = numbers.get(i);
+            int nextNum = numbers.get(i + 1);
 
             //check if the difference between numbers are more than 3 or if the nums are equal
             if (diffCheckerNotValid(currentNum, nextNum)) {
@@ -60,7 +62,7 @@ public class Helper {
         return Math.abs(currentNum - nextNum) > 3 || nextNum == currentNum;
     }
 
-    public static void listCreator(List<int[]> numbersList) {
+    public static void listCreator(List<List<Integer>> numbersList) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Paste your input and hit 'Enter' 2 times!");
@@ -72,7 +74,10 @@ public class Helper {
                 break;
             }
 
-            int[] numbers = Arrays.stream(input.split("\\s+")).mapToInt(Integer::parseInt).toArray();
+            List<Integer> numbers = Arrays.stream(input.split("\\s+"))
+                    .map(Integer::parseInt)
+                    .collect(Collectors.toList());
+
             numbersList.add(numbers);
         }
     }

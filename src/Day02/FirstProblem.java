@@ -8,14 +8,14 @@ import static Day02.Helper.listCreator;
 public class FirstProblem {
     public static void main(String[] args) {
 
-        List<int[]> numbersList = new ArrayList<>();
+        List<List<Integer>> numbersList = new ArrayList<>();
 
         //fill the list from console
         listCreator(numbersList);
 
         int safe = 0;
 
-        for (int[] numbers : numbersList) {
+        for (List<Integer> numbers : numbersList) {
             //check if the numbers are safe
             if (isSafe(numbers)) {
                 safe++;

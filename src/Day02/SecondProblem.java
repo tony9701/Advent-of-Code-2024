@@ -3,8 +3,7 @@ package Day02;
 import java.util.ArrayList;
 import java.util.List;
 
-import static Day02.Helper.isSafe;
-import static Day02.Helper.listCreator;
+import static Day02.Helper.*;
 
 public class SecondProblem {
     public static void main(String[] args) {
@@ -18,7 +17,7 @@ public class SecondProblem {
 
         for (List<Integer> numbers: numbersList) {
             //check if the numbers are safe
-            if (isSafe(numbers)) {
+            if (isSafeWithRemoving(numbers)) {
                 safe++;
             }
         }

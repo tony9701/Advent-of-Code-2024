@@ -18,7 +18,7 @@ public class SecondProblem {
 
         for (List<Integer> numbers: numbersList) {
             //check if the numbers are safe
-            if (isSafe(numbers, true)) {
+            if (isSafe(numbers)) {
                 safe++;
             }
         }

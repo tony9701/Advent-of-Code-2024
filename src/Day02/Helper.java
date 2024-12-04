@@ -1,5 +1,6 @@
 package Day02;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -18,8 +19,10 @@ public class Helper {
     }
 
     public static boolean isIncreasing(List<Integer> numbers) {
+        int count = 0;
+        //1 3 3 6 9
         for (int i = 0; i < numbers.size() - 1; i++) {
-            int diff = numbers.get(i) - numbers.get(i + 1);
+            int diff = numbers.get(i + 1) - numbers.get(i);
 
             if (diff < 1 || diff > 3) {
                 return false;
@@ -31,8 +34,12 @@ public class Helper {
 
 
     public static boolean isDecreasing(List<Integer> numbers) {
+        int count = 0;
+        // 1 3 3 6 9
         for (int i = 0; i < numbers.size() - 1; i++) {
-            int diff = numbers.get(i + 1) - numbers.get(i);
+
+
+            int diff = numbers.get(i) - numbers.get(i + 1);
 
             if (diff < 1 || diff > 3) {
                 return false;
@@ -40,6 +47,25 @@ public class Helper {
         }
 
         return true;
+    }
+
+    public static boolean isSafeWithRemoving(List<Integer> numbers) {
+        List<Integer> copyNumbers = new ArrayList<>(numbers);
+        int index = 0;
+        int deletedNumber;
+
+        for (int i = 0; i < numbers.size(); i++) {
+            deletedNumber = copyNumbers.remove(index);
+
+            if (isSafe(copyNumbers)) {
+                return true;
+            }
+
+            copyNumbers.add(index, deletedNumber);
+            index++;
+        }
+
+        return false;
     }
 
     public static void listCreator(List<List<Integer>> numbersList) {
@@ -61,4 +87,5 @@ public class Helper {
             numbersList.add(numbers);
         }
     }
+
 }

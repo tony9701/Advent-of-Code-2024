@@ -10,11 +10,11 @@ public class Helper {
 
     public static boolean isSafe(List<Integer> numbers) {
 
-        if (isDecreasing(numbers)) {
+        if (isDecreasingV2(numbers)) {
             return true;
         }
 
-        return isIncreasing(numbers);
+        return isIncreasingV2(numbers);
 
     }
 
@@ -26,6 +26,31 @@ public class Helper {
 
         return isIncreasing(numbers, true);
 
+    }
+
+    public static boolean isIncreasingV2(List<Integer> numbers) {
+        for (int i = 0; i < numbers.size() - 1; i++) {
+            int diff = numbers.get(i) - numbers.get(i + 1);
+
+            if (diff < 1 || diff > 3) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
+    public static boolean isDecreasingV2(List<Integer> numbers) {
+        for (int i = 0; i < numbers.size() - 1; i++) {
+            int diff = numbers.get(i + 1) - numbers.get(i);
+
+            if (diff < 1 || diff > 3) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 

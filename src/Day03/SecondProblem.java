@@ -15,7 +15,7 @@ public class SecondProblem {
 
         Pattern pattern = Pattern.compile(regex);
 
-        BufferedReader reader = new BufferedReader(new FileReader("src/Day03/input.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("src/Day03/inputData.txt"));
 
         StringBuilder input = new StringBuilder();
 

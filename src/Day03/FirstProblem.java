@@ -18,6 +18,7 @@ public class FirstProblem {
         BufferedReader reader = new BufferedReader(new FileReader("src/Day03/input.txt"));
 
         StringBuilder input = new StringBuilder();
+        
         String line;
 
         while ((line = reader.readLine()) != null) {
@@ -27,27 +28,14 @@ public class FirstProblem {
 
         Matcher matcher = pattern.matcher(input);
 
-
-        Map<Integer, Integer> matches = new HashMap<>();
-        List<Integer> listTest = new ArrayList<>();
+        List<Integer> numbers = new ArrayList<>();
 
         while (matcher.find()) {
-            matches.put(Integer.parseInt(matcher.group(1)), Integer.parseInt(matcher.group(2)));
-            listTest.add(Integer.parseInt(matcher.group(1)) * Integer.parseInt(matcher.group(2)));
+            numbers.add(Integer.parseInt(matcher.group(1)) * Integer.parseInt(matcher.group(2)));
         }
 
-        long listCount = listTest.stream().mapToLong(l -> l).sum();
-        long listCount2 = 0;
+        long result = numbers.stream().mapToLong(l -> l).sum();
 
-        for (Integer i : listTest) {
-            listCount2 += i;
-        }
-
-        long count = matches.entrySet().stream().mapToLong(e -> (long) e.getKey() * e.getValue()).sum();
-
-        System.out.println("\n" + count);
-        System.out.println("\n" + listCount);
-        System.out.println("\n" + listCount2);
-
+        System.out.println("\n" + result);
     }
 }

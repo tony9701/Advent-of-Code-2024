@@ -24,10 +24,7 @@ public class FirstProblem {
             input.append(line);
             input.append(System.lineSeparator());
         }
-
-        System.out.println();
-        System.out.println(input.toString());
-        System.out.println();
+        
         Matcher matcher = pattern.matcher(input);
 
 

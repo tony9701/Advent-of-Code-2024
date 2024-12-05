@@ -18,7 +18,7 @@ public class FirstProblem {
         BufferedReader reader = new BufferedReader(new FileReader("src/Day03/input.txt"));
 
         StringBuilder input = new StringBuilder();
-        
+
         String line;
 
         while ((line = reader.readLine()) != null) {
